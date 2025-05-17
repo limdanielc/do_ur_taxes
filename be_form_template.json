@@ -1,0 +1,302 @@
+{
+  "personal_details": {
+    "name": "",
+    "identification_or_passport_no": "",
+    "tax_identification_no": "",
+    "correspondence_address": {
+      "address_line_1": "",
+      "address_line_2": "",
+      "postcode": "",
+      "city": "",
+      "state": "",
+      "country": ""
+    }
+  },
+  "basic_particulars": {
+    "name_as_per_identification": "",
+    "tax_identification_no": "",
+    "identification_no": "",
+    "current_passport_no": "",
+    "passport_no_registered_with_lhdnm": ""
+  },
+  "particulars_of_individual": {
+    "A1_citizen": "",
+    "A2_gender": 1,
+    "A3_date_of_birth": "",
+    "A4_status_as_at_31_12_2024": 1,
+    "A5_date_of_marriage_divorce_demise": "",
+    "A6_type_of_assessment": 1
+  },
+
+  "computation_of_income_tax": {
+    "B1_employment_income": 0.00,
+    "B1a_number_of_employment": 0,
+    "B2_rent_income": 0.00,
+    "B3_other_income_domestic": 0.00,
+    "B4_foreign_income_received": 0.00,
+    "B5_aggregate_income": 0.00,
+    "B6_less_angel_investment": 0.00,
+    "B7_total_after_investment_deduction": 0.00,
+    "B8_less_donations": 0.00,
+    "B9_total_income_self": 0.00,
+    "income_transferred_spouse": {
+      "amount": 0.00,
+      "type": 1
+    },
+    "B11_aggregate_total_income": 0.00,
+    "B12_total_relief": 0.00,
+    "B13_chargeable_income": 0.00,
+    "B14_income_tax_computation": {
+      "tax_on_first": 0.00,
+      "tax_on_balance": {
+        "amount": 0.00,
+        "rate_percent": 0.00
+      }
+    },
+    "B15_total_income_tax": 0.00,
+    "B16_less_rebate": {
+      "self": 0.00,
+      "husband_wife": 0.00,
+      "departure_levy": 0.00,
+      "number_of_trips": 0,
+      "zakat_fitrah": 0.00
+    },
+    "B17_total_tax_charged": 0.00,
+    "B18_section_110_deduction": 0.00,
+    "B19_section_132_relief": 0.00,
+    "B19_section_133_relief": 0.00,
+    "B20_tax_payable": 0.00,
+    "B21_tax_repayable": 0.00,
+    "B22_payment_2024": {
+      "monthly_tax_deduction_mtd": 0.00,
+      "section_107d": 0.00,
+      "self_installments_cp500": 0.00
+    },
+    "B23_tax_balance_or_excess": 0.00
+  },
+
+  "particulars_of_husband_wife": {
+    "C1_name": "",
+    "C2_identification_no": "",
+    "C3_date_of_birth": "",
+    "C4_passport_no": ""
+  },
+
+  "other_particulars": {
+    "D1_telephone_no": "",
+    "D1_handphone_no": "",
+    "D2_email": "",
+    "D3_employer_tin": "",
+    "D4_tax_borne_by_employer": 1,
+    "D5_has_foreign_financial_account": 1,
+    "D6_tax_refund_method": 1,
+    "D7_bank_account_info": {
+      "D7a_bank_name": "",
+      "D7b_bank_account_no": ""
+    },
+    "D8_duitnow_info": {
+      "D8a_identification_type": 1,
+      "D8b_passport_no": ""
+    },
+    "D9_disposal_of_asset": {
+      "D9a_disposed": 1,
+      "D9b_declared_to_lhdnm": 1
+    },
+    "D10_correspondence_address": {
+      "address_line_1": "",
+      "address_line_2": "",
+      "postcode": "",
+      "city": "",
+      "state": "",
+      "country": ""
+    }
+  },
+  "other_statutory_income_foreign": {
+    "E1": {
+      "country": "",
+      "type_of_income": "",
+      "tax_charged_origin": 0.00,
+      "statutory_income": 0.00
+    },
+    "E2": {
+      "country": "",
+      "type_of_income": "",
+      "tax_charged_origin": 0.00,
+      "statutory_income": 0.00
+    },
+    "E3": {
+      "country": "",
+      "type_of_income": "",
+      "tax_charged_origin": 0.00,
+      "statutory_income": 0.00
+    },
+    "E4_total_statutory_income": 0.00
+  },
+
+  "donations_gifts_contributions": {
+    "F1_gift_to_government": 0.00,
+    "F2a_gift_to_approved_institutions": 0.00,
+    "F2b_gift_for_sports": 0.00,
+    "F2c_gift_for_national_interest": 0.00,
+    "F2d_gift_wakaf_or_endowment": 0.00,
+    "F2_total_restricted": 0.00,
+    "F3_gift_of_artefacts": 0.00,
+    "F4_gift_for_library_facilities": 0.00,
+    "F5_gift_for_disabled_facilities": 0.00,
+    "F6_gift_of_medical_equipment": 0.00,
+    "F7_gift_of_paintings": 0.00,
+    "F8_total_approved_donations": 0.00
+  },
+
+  "relief": {
+    "G1_individual_and_dependents": 9000.00,
+    "G2_parents": {
+      "medical_treatment": 0.00,
+      "complete_medical_exam": 0.00
+    },
+    "G3_supporting_equipment": 0.00,
+    "G4_disabled_individual": 6000.00,
+    "G5_education_fees": {
+      "non_masters": 0.00,
+      "masters_or_phd": 0.00,
+      "upskilling": 0.00
+    },
+    "G6_medical_expenses": {
+      "serious_diseases": 0.00,
+      "fertility_treatment": 0.00,
+      "vaccination": 0.00,
+      "dental_exam": 0.00
+    },
+    "G7_misc_expenses": {
+      "medical_exam": 0.00,
+      "covid_test": 0.00,
+      "mental_health": 0.00
+    },
+    "G8_disability_child_expenses": {
+      "learning_disability_assessment": 0.00,
+      "rehabilitation_programme": 0.00
+    },
+    "G9_lifestyle_expenses": {
+      "books_magazines": 0.00,
+      "tech_devices": 0.00,
+      "internet": 0.00,
+      "self_improvement_courses": 0.00
+    },
+    "G10_additional_lifestyle_expenses": {
+      "sports_equipment": 0.00,
+      "sports_facility": 0.00,
+      "competition_fee": 0.00,
+      "gym_membership": 0.00
+    },
+    "G11_breastfeeding_equipment": 0.00,
+    "G12_childcare_fees": 0.00,
+    "G13_sspn_net_deposit": 0.00,
+    "G14_alimony": 0.00,
+    "G15_disabled_spouse": 5000.00,
+    "G16_child": {
+      "under_18": 0.00,
+      "above_18_studying": 0.00,
+      "disabled": 0.00
+    },
+    "G17_insurance_epf": {
+      "life_insurance": 0.00,
+      "epf": 0.00
+    },
+    "G18_private_retirement": 0.00,
+    "G19_education_medical_insurance": 0.00,
+    "G20_socso_eis": 0.00,
+    "G21_ev_charger_expense": 0.00,
+    "G22_total_relief": 0.00
+  },
+
+  "incentive_claim": {
+    "H1_special_deductions": [
+      {
+        "claim_code": "",
+        "balance_brought_forward": 0.00,
+        "amount_claimed": 0.00,
+        "amount_absorbed": 0.00,
+        "balance_carried_forward": 0.00
+      },
+      {
+        "claim_code": "",
+        "balance_brought_forward": 0.00,
+        "amount_claimed": 0.00,
+        "amount_absorbed": 0.00,
+        "balance_carried_forward": 0.00
+      }
+    ],
+    "H2_incentive_approvals": [
+      {
+        "approval_no": "",
+        "balance_brought_forward": 0.00,
+        "amount_claimed": 0.00,
+        "amount_absorbed": 0.00,
+        "balance_carried_forward": 0.00
+      },
+      {
+        "approval_no": "",
+        "balance_brought_forward": 0.00,
+        "amount_claimed": 0.00,
+        "amount_absorbed": 0.00,
+        "balance_carried_forward": 0.00
+      }
+    ]
+  },
+
+  "non_employment_income_previous_years": [
+    {
+      "type_of_income": "",
+      "year_of_assessment": "",
+      "amount": 0.00
+    },
+    {
+      "type_of_income": "",
+      "year_of_assessment": "",
+      "amount": 0.00
+    }
+  ],
+
+  "foreign_tax_exempt_income": [
+    {
+      "country": "",
+      "type_of_income": "",
+      "tax_paid_in_origin": 1,
+      "headline_tax_rate_origin": 0.00,
+      "amount_tax_charged_origin": 0.00,
+      "amount_income_remitted": 0.00
+    },
+    {
+      "country": "",
+      "type_of_income": "",
+      "tax_paid_in_origin": 1,
+      "headline_tax_rate_origin": 0.00,
+      "amount_tax_charged_origin": 0.00,
+      "amount_income_remitted": 0.00
+    },
+    {
+      "country": "",
+      "type_of_income": "",
+      "tax_paid_in_origin": 1,
+      "headline_tax_rate_origin": 0.00,
+      "amount_tax_charged_origin": 0.00,
+      "amount_income_remitted": 0.00
+    },
+    {
+      "country": "",
+      "type_of_income": "",
+      "tax_paid_in_origin": 1,
+      "headline_tax_rate_origin": 0.00,
+      "amount_tax_charged_origin": 0.00,
+      "amount_income_remitted": 0.00
+    },
+    {
+      "country": "",
+      "type_of_income": "",
+      "tax_paid_in_origin": 1,
+      "headline_tax_rate_origin": 0.00,
+      "amount_tax_charged_origin": 0.00,
+      "amount_income_remitted": 0.00
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "type": "object",
+  "properties": {
+    "personal_details": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "identification_or_passport_no": { "type": "string" },
+        "tax_identification_no": { "type": "string" },
+        "correspondence_address": {
+          "type": "object",
+          "properties": {
+            "address_line_1": { "type": "string" },
+            "address_line_2": { "type": "string" },
+            "postcode": { "type": "string" },
+            "city": { "type": "string" },
+            "state": { "type": "string" },
+            "country": { "type": "string" }
+          },
+          "required": ["postcode", "city", "state", "country"]
+        }
+      },
+      "required": ["name", "identification_or_passport_no", "tax_identification_no", "correspondence_address"]
+    },
+    "basic_particulars": {
+      "type": "object",
+      "properties": {
+        "name_as_per_identification": { "type": "string" },
+        "tax_identification_no": { "type": "string" },
+        "identification_no": { "type": "string" },
+        "current_passport_no": { "type": "string" },
+        "passport_no_registered_with_lhdnm": { "type": "string" }
+      },
+      "required": [
+        "name_as_per_identification",
+        "tax_identification_no",
+        "identification_no",
+        "current_passport_no",
+        "passport_no_registered_with_lhdnm"
+      ]
+    },
+    "particulars_of_individual": {
+      "type": "object",
+      "properties": {
+        "A1_citizen": { "type": "string" },
+        "A2_gender": {
+          "type": "integer",
+          "enum": [1, 2],
+          "description": "1 = Male, 2 = Female"
+        },
+        "A3_date_of_birth": {
+          "type": "string",
+          "format": "date"
+        },
+        "A4_status_as_at_31_12_2024": {
+          "type": "integer",
+          "enum": [1, 2, 3, 4],
+          "description": "1 = Single, 2 = Married, 3 = Divorcee/widow/widower, 4 = Deceased"
+        },
+        "A5_date_of_marriage_divorce_demise": {
+          "type": "string",
+          "format": "date"
+        },
+        "A6_type_of_assessment": {
+          "type": "integer",
+          "enum": [1, 2, 3, 4, 5],
+          "description": "1 = Joint (husband), 2 = Joint (wife), 3 = Separate, 4 = Self (spouse no income), 5 = Self (single/divorcee/widow/widower/deceased)"
+        }
+      },
+      "required": [
+        "A1_citizen",
+        "A2_gender",
+        "A3_date_of_birth",
+        "A4_status_as_at_31_12_2024",
+        "A6_type_of_assessment"
+      ]
+    },
+    "computation_of_income_tax": {
+      "type": "object",
+      "properties": {
+        "B1_employment_income": { "type": "number" },
+        "B1a_number_of_employment": { "type": "integer" },
+        "B2_rent_income": { "type": "number" },
+        "B3_other_income_domestic": { "type": "number" },
+        "B4_foreign_income_received": { "type": "number" },
+        "B5_aggregate_income": { "type": "number" },
+        "B6_less_angel_investment": { "type": "number" },
+        "B7_total_after_investment_deduction": { "type": "number" },
+        "B8_less_donations": { "type": "number" },
+        "B9_total_income_self": { "type": "number" },
+        "income_transferred_spouse": {
+          "type": "object",
+          "properties": {
+            "amount": { "type": "number" },
+            "type": {
+              "type": "integer",
+              "enum": [1, 2],
+              "description": "1 = Carries on business, 2 = Does not carry on business"
+            }
+          },
+          "required": ["amount", "type"]
+        },
+        "B11_aggregate_total_income": { "type": "number" },
+        "B12_total_relief": { "type": "number" },
+        "B13_chargeable_income": { "type": "number" },
+        "B14_income_tax_computation": {
+          "type": "object",
+          "properties": {
+            "tax_on_first": { "type": "number" },
+            "tax_on_balance": {
+              "type": "object",
+              "properties": {
+                "amount": { "type": "number" },
+                "rate_percent": { "type": "number" }
+              },
+              "required": ["amount", "rate_percent"]
+            }
+          },
+          "required": ["tax_on_first", "tax_on_balance"]
+        },
+        "B15_total_income_tax": { "type": "number" },
+        "B16_less_rebate": {
+          "type": "object",
+          "properties": {
+            "self": { "type": "number" },
+            "husband_wife": { "type": "number" },
+            "departure_levy": { "type": "number" },
+            "number_of_trips": { "type": "integer" },
+            "zakat_fitrah": { "type": "number" }
+          },
+          "required": ["self", "husband_wife", "departure_levy", "number_of_trips", "zakat_fitrah"]
+        },
+        "B17_total_tax_charged": { "type": "number" },
+        "B18_section_110_deduction": { "type": "number" },
+        "B19_section_132_relief": { "type": "number" },
+        "B19_section_133_relief": { "type": "number" },
+        "B20_tax_payable": { "type": "number" },
+        "B21_tax_repayable": { "type": "number" },
+        "B22_payment_2024": {
+          "type": "object",
+          "properties": {
+            "monthly_tax_deduction_mtd": { "type": "number" },
+            "section_107d": { "type": "number" },
+            "self_installments_cp500": { "type": "number" }
+          },
+          "required": ["monthly_tax_deduction_mtd", "section_107d", "self_installments_cp500"]
+        },
+        "B23_tax_balance_or_excess": { "type": "number" }
+      },
+      "required": [
+        "B1_employment_income",
+        "B2_rent_income",
+        "B3_other_income_domestic",
+        "B4_foreign_income_received",
+        "B5_aggregate_income",
+        "B6_less_angel_investment",
+        "B7_total_after_investment_deduction",
+        "B8_less_donations",
+        "B9_total_income_self",
+        "income_transferred_spouse",
+        "B11_aggregate_total_income",
+        "B12_total_relief",
+        "B13_chargeable_income",
+        "B14_income_tax_computation",
+        "B15_total_income_tax",
+        "B16_less_rebate",
+        "B17_total_tax_charged",
+        "B18_section_110_deduction",
+        "B19_section_132_relief",
+        "B19_section_133_relief",
+        "B20_tax_payable",
+        "B21_tax_repayable",
+        "B22_payment_2024",
+        "B23_tax_balance_or_excess"
+      ]
+    }
+  },
+
+    "particulars_of_husband_wife": {
+        "type": "object",
+        "properties": {
+        "C1_name": { "type": "string" },
+        "C2_identification_no": { "type": "string" },
+        "C3_date_of_birth": { "type": "string", "format": "date" },
+        "C4_passport_no": { "type": "string" }
+        },
+        "required": ["C1_name", "C2_identification_no", "C3_date_of_birth", "C4_passport_no"]
+    },
+  "other_particulars": {
+    "type": "object",
+    "properties": {
+      "D1_telephone_no": { "type": "string" },
+      "D1_handphone_no": { "type": "string" },
+      "D2_email": { "type": "string", "format": "email" },
+      "D3_employer_tin": { "type": "string" },
+      "D4_tax_borne_by_employer": {
+        "type": "integer",
+        "enum": [1, 2],
+        "description": "1 = Yes, 2 = No"
+      },
+      "D5_has_foreign_financial_account": {
+        "type": "integer",
+        "enum": [1, 2],
+        "description": "1 = Yes, 2 = No"
+      },
+      "D6_tax_refund_method": {
+        "type": "integer",
+        "enum": [1, 2],
+        "description": "1 = Bank account, 2 = DuitNow"
+      },
+      "D7_bank_account_info": {
+        "type": "object",
+        "properties": {
+          "D7a_bank_name": { "type": "string" },
+          "D7b_bank_account_no": { "type": "string" }
+        },
+        "required": ["D7a_bank_name", "D7b_bank_account_no"]
+      },
+      "D8_duitnow_info": {
+        "type": "object",
+        "properties": {
+          "D8a_identification_type": {
+            "type": "integer",
+            "enum": [1, 2],
+            "description": "1 = Identification card, 2 = Passport"
+          },
+          "D8b_passport_no": { "type": "string" }
+        },
+        "required": ["D8a_identification_type"]
+      },
+      "D9_disposal_of_asset": {
+        "type": "object",
+        "properties": {
+          "D9a_disposed": {
+            "type": "integer",
+            "enum": [1, 2],
+            "description": "1 = Yes, 2 = No"
+          },
+          "D9b_declared_to_lhdnm": {
+            "type": "integer",
+            "enum": [1, 2],
+            "description": "1 = Yes, 2 = No"
+          }
+        },
+        "required": ["D9a_disposed", "D9b_declared_to_lhdnm"]
+      },
+      "D10_correspondence_address": {
+        "type": "object",
+        "properties": {
+          "address_line_1": { "type": "string" },
+          "address_line_2": { "type": "string" },
+          "postcode": { "type": "string" },
+          "city": { "type": "string" },
+          "state": { "type": "string" },
+          "country": { "type": "string" }
+        },
+        "required": ["postcode", "city", "state", "country"]
+      }
+    },
+    "required": [
+      "D1_telephone_no",
+      "D1_handphone_no",
+      "D2_email",
+      "D3_employer_tin",
+      "D4_tax_borne_by_employer",
+      "D5_has_foreign_financial_account",
+      "D6_tax_refund_method",
+      "D7_bank_account_info",
+      "D8_duitnow_info",
+      "D9_disposal_of_asset",
+      "D10_correspondence_address"
+    ]
+  },
+  "other_statutory_income_foreign": {
+    "type": "object",
+    "properties": {
+      "E1": {
+        "type": "object",
+        "properties": {
+          "country": { "type": "string" },
+          "type_of_income": {
+            "type": "string",
+            "enum": [
+              "employment",
+              "dividends",
+              "interests",
+              "discount",
+              "rents",
+              "royalties",
+              "premiums",
+              "other"
+            ]
+          },
+          "tax_charged_origin": { "type": "number" },
+          "statutory_income": { "type": "number" }
+        },
+        "required": ["country", "type_of_income", "tax_charged_origin", "statutory_income"]
+      },
+      "E2": {
+        "type": "object",
+        "properties": {
+          "country": { "type": "string" },
+          "type_of_income": {
+            "type": "string",
+            "enum": [
+              "employment",
+              "dividends",
+              "interests",
+              "discount",
+              "rents",
+              "royalties",
+              "premiums",
+              "other"
+            ]
+          },
+          "tax_charged_origin": { "type": "number" },
+          "statutory_income": { "type": "number" }
+        },
+        "required": ["country", "type_of_income", "tax_charged_origin", "statutory_income"]
+      },
+      "E3": {
+        "type": "object",
+        "properties": {
+          "country": { "type": "string" },
+          "type_of_income": {
+            "type": "string",
+            "enum": [
+              "employment",
+              "dividends",
+              "interests",
+              "discount",
+              "rents",
+              "royalties",
+              "premiums",
+              "other"
+            ]
+          },
+          "tax_charged_origin": { "type": "number" },
+          "statutory_income": { "type": "number" }
+        },
+        "required": ["country", "type_of_income", "tax_charged_origin", "statutory_income"]
+      },
+      "E4_total_statutory_income": { "type": "number" }
+    },
+    "required": ["E1", "E2", "E3", "E4_total_statutory_income"]
+  },
+
+  "donations_gifts_contributions": {
+    "type": "object",
+    "properties": {
+      "F1_gift_to_government": { "type": "number", "minimum": 0 },
+      "F2a_gift_to_approved_institutions": { "type": "number", "minimum": 0 },
+      "F2b_gift_for_sports": { "type": "number", "minimum": 0 },
+      "F2c_gift_for_national_interest": { "type": "number", "minimum": 0 },
+      "F2d_gift_wakaf_or_endowment": { "type": "number", "minimum": 0 },
+      "F2_total_restricted": {
+        "type": "number",
+        "description": "Sum of F2a to F2d, restricted to 10% of B5"
+      },
+      "F3_gift_of_artefacts": { "type": "number", "minimum": 0 },
+      "F4_gift_for_library_facilities": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 20000
+      },
+      "F5_gift_for_disabled_facilities": { "type": "number", "minimum": 0 },
+      "F6_gift_of_medical_equipment": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 20000
+      },
+      "F7_gift_of_paintings": { "type": "number", "minimum": 0 },
+      "F8_total_approved_donations": {
+        "type": "number",
+        "description": "Sum of F1 + F2_total_restricted + F3 to F7"
+      }
+    },
+    "required": [
+      "F1_gift_to_government",
+      "F2a_gift_to_approved_institutions",
+      "F2b_gift_for_sports",
+      "F2c_gift_for_national_interest",
+      "F2d_gift_wakaf_or_endowment",
+      "F2_total_restricted",
+      "F3_gift_of_artefacts",
+      "F4_gift_for_library_facilities",
+      "F5_gift_for_disabled_facilities",
+      "F6_gift_of_medical_equipment",
+      "F7_gift_of_paintings",
+      "F8_total_approved_donations"
+    ]
+  },
+
+  "relief": {
+    "type": "object",
+    "properties": {
+      "G1_individual_and_dependents": { "type": "number" },
+
+      "G2_parents": {
+        "type": "object",
+        "properties": {
+          "medical_treatment": { "type": "number", "maximum": 8000 },
+          "complete_medical_exam": { "type": "number", "maximum": 1000 }
+        }
+      },
+
+      "G3_supporting_equipment": { "type": "number", "maximum": 6000 },
+      "G4_disabled_individual": { "type": "number", "const": 6000 },
+
+      "G5_education_fees": {
+        "type": "object",
+        "properties": {
+          "non_masters": { "type": "number" },
+          "masters_or_phd": { "type": "number" },
+          "upskilling": { "type": "number", "maximum": 2000 }
+        }
+      },
+
+      "G6_medical_expenses": {
+        "type": "object",
+        "properties": {
+          "serious_diseases": { "type": "number" },
+          "fertility_treatment": { "type": "number" },
+          "vaccination": { "type": "number", "maximum": 1000 },
+          "dental_exam": { "type": "number" }
+        },
+        "description": "Total restricted to 10,000 (not enforced in JSON Schema)"
+      },
+
+      "G7_misc_expenses": {
+        "type": "object",
+        "properties": {
+          "medical_exam": { "type": "number" },
+          "covid_test": { "type": "number" },
+          "mental_health": { "type": "number" }
+        },
+        "description": "Total restricted to 1,000 (not enforced in JSON Schema)"
+      },
+
+      "G8_disability_child_expenses": {
+        "type": "object",
+        "properties": {
+          "learning_disability_assessment": { "type": "number" },
+          "rehabilitation_programme": { "type": "number" }
+        },
+        "description": "Total restricted to 4,000"
+      },
+
+      "G9_lifestyle_expenses": {
+        "type": "object",
+        "properties": {
+          "books_magazines": { "type": "number" },
+          "tech_devices": { "type": "number" },
+          "internet": { "type": "number" },
+          "self_improvement_courses": { "type": "number" }
+        },
+        "description": "Total restricted to 2,500"
+      },
+
+      "G10_additional_lifestyle_expenses": {
+        "type": "object",
+        "properties": {
+          "sports_equipment": { "type": "number" },
+          "sports_facility": { "type": "number" },
+          "competition_fee": { "type": "number" },
+          "gym_membership": { "type": "number" }
+        },
+        "description": "Total restricted to 1,000"
+      },
+
+      "G11_breastfeeding_equipment": { "type": "number", "maximum": 1000 },
+      "G12_childcare_fees": { "type": "number", "maximum": 3000 },
+      "G13_sspn_net_deposit": { "type": "number", "maximum": 8000 },
+      "G14_alimony": { "type": "number", "maximum": 4000 },
+      "G15_disabled_spouse": { "type": "number", "const": 5000 },
+
+      "G16_child": {
+        "type": "object",
+        "properties": {
+          "under_18": { "type": "number", "maximum": 2000 },
+          "above_18_studying": { "type": "number", "maximum": 2000 },
+          "disabled": { "type": "number", "maximum": 6000 }
+        }
+      },
+
+      "G17_insurance_epf": {
+        "type": "object",
+        "properties": {
+          "life_insurance": { "type": "number", "maximum": 3000 },
+          "epf": { "type": "number", "maximum": 4000 }
+        }
+      },
+
+      "G18_private_retirement": { "type": "number", "maximum": 3000 },
+      "G19_education_medical_insurance": { "type": "number", "maximum": 3000 },
+      "G20_socso_eis": { "type": "number", "maximum": 350 },
+      "G21_ev_charger_expense": { "type": "number", "maximum": 2500 },
+      "G22_total_relief": { "type": "number" }
+    }
+  },
+
+  "incentive_claim": {
+    "type": "object",
+    "properties": {
+      "H1_special_deductions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "claim_code": { "type": "string" },
+            "balance_brought_forward": { "type": "number" },
+            "amount_claimed": { "type": "number" },
+            "amount_absorbed": { "type": "number" },
+            "balance_carried_forward": { "type": "number" }
+          },
+          "required": [
+            "claim_code",
+            "balance_brought_forward",
+            "amount_claimed",
+            "amount_absorbed",
+            "balance_carried_forward"
+          ]
+        },
+        "maxItems": 2
+      },
+      "H2_incentive_approvals": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "approval_no": { "type": "string" },
+            "balance_brought_forward": { "type": "number" },
+            "amount_claimed": { "type": "number" },
+            "amount_absorbed": { "type": "number" },
+            "balance_carried_forward": { "type": "number" }
+          },
+          "required": [
+            "approval_no",
+            "balance_brought_forward",
+            "amount_claimed",
+            "amount_absorbed",
+            "balance_carried_forward"
+          ]
+        },
+        "maxItems": 2
+      }
+    }
+  },
+
+  "non_employment_income_previous_years": {
+    "type": "array",
+    "maxItems": 2,
+    "items": {
+      "type": "object",
+      "properties": {
+        "type_of_income": { "type": "string" },
+        "year_of_assessment": {
+          "type": "string",
+          "pattern": "^(19|20)\\d{2}$"
+        },
+        "amount": { "type": "number" }
+      },
+      "required": ["type_of_income", "year_of_assessment", "amount"]
+    }
+  },
+
+  "foreign_tax_exempt_income": {
+    "type": "array",
+    "maxItems": 5,
+    "items": {
+      "type": "object",
+      "properties": {
+        "country": { "type": "string" },
+        "type_of_income": {
+          "type": "string",
+          "enum": [
+            "employment",
+            "dividends",
+            "interests",
+            "discounts",
+            "rents",
+            "royalties",
+            "premiums",
+            "other"
+          ]
+        },
+        "tax_paid_in_origin": {
+          "type": "integer",
+          "enum": [1, 2],
+          "description": "1 = Yes, 2 = No"
+        },
+        "headline_tax_rate_origin": { "type": "number" },
+        "amount_tax_charged_origin": { "type": "number" },
+        "amount_income_remitted": { "type": "number" }
+      },
+      "required": [
+        "country",
+        "type_of_income",
+        "tax_paid_in_origin",
+        "headline_tax_rate_origin",
+        "amount_tax_charged_origin",
+        "amount_income_remitted"
+      ]
+    }
+  },
+
+  "required": ["personal_details", "basic_particulars", "particulars_of_individual", "computation_of_income_tax", "particulars_of_husband_wife", "other_particulars", "other_statutory_income_foreign", "donations_gifts_contributions", "relief", "incentive_claim", "non_employment_income_previous_years", "foreign_tax_exempt_income"]
+}
+
