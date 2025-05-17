@@ -31,8 +31,8 @@ export default function UploadPage() {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-50 p-6">
-      <div className="max-w-xl mx-auto">
+    <main className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-6 flex items-center justify-center">
+      <div className="w-full max-w-md">
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl">Upload Receipt</CardTitle>
@@ -77,9 +77,9 @@ export default function UploadPage() {
             </form>
 
             {/* Upload Tips */}
-            <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-              <h3 className="font-medium text-blue-900 mb-2">Upload Tips</h3>
-              <ul className="text-sm text-blue-800 space-y-1">
+            <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10">
+              <h3 className="font-medium text-primary mb-3">Upload Tips</h3>
+              <ul className="text-sm text-primary/80 space-y-2">
                 <li>• Ensure the receipt is well-lit and clear</li>
                 <li>• Include the full receipt in the image</li>
                 <li>• Make sure all text is readable</li>
