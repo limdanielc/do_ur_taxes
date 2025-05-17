@@ -1,9 +1,5 @@
-const OSS = require('ali-oss');
 const Expense = require('../models/expense.model');
-const config = require('../config/config');
-
-// Initialize OSS client
-const ossClient = new OSS(config.ossConfig);
+const ossUtil = require('../utils/oss.util');
 
 const createExpense = async (req, res) => {
   try {
@@ -44,9 +40,8 @@ const uploadReceipt = async (req, res) => {
       });
     }
 
-    // Upload to OSS
-    const ossKey = `receipts/${req.user.id}/${expenseId}/${Date.now()}-${file.originalname}`;
-    const result = await ossClient.put(ossKey, file.buffer);
+    // Upload to OSS using our utility
+    const result = await ossUtil.uploadFile(file.originalname, file.buffer, req.user.id);
 
     // Update expense with receipt info
     const expense = await Expense.findByIdAndUpdate(
@@ -54,7 +49,7 @@ const uploadReceipt = async (req, res) => {
       {
         receipt: {
           url: result.url,
-          key: ossKey
+          key: result.key
         }
       },
       { new: true }
@@ -202,7 +197,7 @@ const deleteExpense = async (req, res) => {
 
     // Delete receipt from OSS if exists
     if (expense.receipt?.key) {
-      await ossClient.delete(expense.receipt.key);
+      await ossUtil.deleteFile(expense.receipt.key);
     }
 
     res.json({ message: 'Expense deleted successfully' });

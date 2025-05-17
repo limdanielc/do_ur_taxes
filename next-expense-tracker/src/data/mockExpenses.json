@@ -1,0 +1,43 @@
+{
+  "expenses": [
+    {
+      "id": "1",
+      "description": "Office Supplies",
+      "category": "Office",
+      "amount": 150.00,
+      "date": "2025-05-17",
+      "taxDeductible": true,
+      "receipt": "/receipts/office-supplies.jpg"
+    },
+    {
+      "id": "2",
+      "description": "Client Lunch",
+      "category": "Food",
+      "amount": 85.50,
+      "date": "2025-05-16",
+      "taxDeductible": true,
+      "receipt": "/receipts/lunch-receipt.jpg"
+    },
+    {
+      "id": "3",
+      "description": "Software License",
+      "category": "Software",
+      "amount": 299.99,
+      "date": "2025-05-15",
+      "taxDeductible": true,
+      "receipt": "/receipts/software-license.pdf"
+    }
+  ],
+  "summary": {
+    "total": 2535.49,
+    "taxDeductible": 1850.00,
+    "uploadsThisMonth": 15,
+    "byCategory": {
+      "Office": 450.00,
+      "Food": 285.50,
+      "Software": 899.99,
+      "Travel": 600.00,
+      "Other": 300.00
+    }
+  }
+}

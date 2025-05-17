@@ -1,0 +1,40 @@
+{
+  "vendor": "Office Depot",
+  "date": "2025-05-17",
+  "items": [
+    {
+      "id": "1",
+      "description": "Premium Paper Ream",
+      "quantity": 2,
+      "unitPrice": 24.99,
+      "total": 49.98,
+      "category": "Office",
+      "taxDeductible": true
+    },
+    {
+      "id": "2",
+      "description": "Ink Cartridge HP304",
+      "quantity": 1,
+      "unitPrice": 65.99,
+      "total": 65.99,
+      "category": "Office",
+      "taxDeductible": true
+    },
+    {
+      "id": "3",
+      "description": "Desk Organizer",
+      "quantity": 1,
+      "unitPrice": 34.03,
+      "total": 34.03,
+      "category": "Office",
+      "taxDeductible": true
+    }
+  ],
+  "subtotal": 150.00,
+  "tax": 12.00,
+  "total": 162.00,
+  "paymentMethod": "Credit Card",
+  "confidence": 0.95,
+  "suggestedCategory": "Office",
+  "taxDeductibleConfidence": 0.98
+}

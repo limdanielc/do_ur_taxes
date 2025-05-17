@@ -1,0 +1,47 @@
+====================================
+EXPENSE TRACKER - TAX REPORT 2025
+====================================
+
+Generated for: Demo User
+Date: May 17, 2025
+
+EXPENSE SUMMARY
+--------------
+Total Expenses: $2,535.49
+Tax Deductible: $1,850.00
+Potential Savings: $555.00
+
+CATEGORY BREAKDOWN
+----------------
+Office:    $450.00
+Food:      $285.50
+Software:  $899.99
+Travel:    $600.00
+Other:     $300.00
+
+TAX DEDUCTION DETAILS
+--------------------
+1. Office Supplies
+   - Paper, ink, desk organizer
+   - All items qualify as business expenses
+   - Total deductible: $450.00
+
+2. Client Meals
+   - Business lunch meetings
+   - 50% deductible as per regulations
+   - Total deductible: $142.75
+
+3. Software Licenses
+   - Business software subscriptions
+   - Fully deductible
+   - Total deductible: $899.99
+
+RECOMMENDATIONS
+-------------
+1. Keep all receipts for minimum 7 years
+2. Track business meals separately (50% rule)
+3. Consider quarterly tax payments
+4. Review deductions with tax professional
+
+This is a demo report generated for
+hackathon demonstration purposes only.
