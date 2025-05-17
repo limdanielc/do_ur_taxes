@@ -1,0 +1,36 @@
+{
+  "name": "do_ur_taxes",
+  "version": "1.0.0",
+  "description": "Do the damn taxes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limdanielc/do_ur_taxes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limdanielc/do_ur_taxes/issues"
+  },
+  "homepage": "https://github.com/limdanielc/do_ur_taxes#readme",
+  "dependencies": {
+    "ali-oss": "^6.23.0",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.0",
+    "multer": "^1.4.5-lts.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
