@@ -14,7 +14,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <CardHeader className="space-y-6 pb-8">
+          <CardHeader className="space-y-8 pb-12 px-8">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -47,12 +47,12 @@ export default function Home() {
               </p>
             </motion.div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="px-8 pb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="space-y-4"
+              className="space-y-8"
             >
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
@@ -66,7 +66,7 @@ export default function Home() {
                 />
               </div>
               <Link href="/dashboard" className="w-full block">
-                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity" size="lg">
+                <Button className="w-full cursor-pointer bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-[0.99]" size="lg">
                   Get Started
                 </Button>
               </Link>

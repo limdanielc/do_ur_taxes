@@ -30,10 +30,10 @@ export default function DashboardPage() {
   }));
 
   // Colors for pie chart
-  const COLORS = ["#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe"];
+  const COLORS = ["#875BF7", "#EE46BC", "#A78BFA", "#F472B6", "#9333EA"];
 
   return (
-    <main className="min-h-screen bg-neutral-50 p-6">
+    <main className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-6">
       <div className="max-w-7xl mx-auto space-y-6">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold">Dashboard</h1>
